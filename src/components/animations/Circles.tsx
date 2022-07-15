@@ -30,6 +30,16 @@ const Circle = styled.div`
   border-radius: 210px;
   left: calc(50% - 420px / 2);
   top: calc(50% - 420px / 2);
+  animation: scale 5s 1s linear forwards;
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
 `
 const Circle2 = styled(Circle)`
   width: 260px;
