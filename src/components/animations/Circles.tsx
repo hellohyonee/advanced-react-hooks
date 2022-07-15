@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 function Circles() {
+  const [animation, setAnimation] = useState(false)
+
   return (
-    <Wrapper>
-      <Circle />
-      <Circle2 />
+    <Wrapper onClick={() => setAnimation(true)}>
+      <Circle animation={animation} />
+      <Circle2 animation={animation} />
     </Wrapper>
   )
 }
@@ -31,6 +33,7 @@ const Circle = styled.div`
   left: calc(50% - 420px / 2);
   top: calc(50% - 420px / 2);
   animation: scale 5s 1s linear forwards;
+  animation-play-state: ${props => (props.animation ? "running" : "paused")};
 
   @keyframes scale {
     0% {
