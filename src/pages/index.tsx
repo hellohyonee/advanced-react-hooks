@@ -1,26 +1,31 @@
 import * as React from "react"
 import styled from "styled-components"
+
 import PurchaseButton from "../components/buttons/PurchaseButton"
+import CourseCard from "../components/cards/CourseCard"
 
 const IndexPage = () => (
   <Wrapper>
-    <TextWrapper>
-      <Logo src="/images/logos/react-logo.svg" alt="icon" />
-      <Title>Build a web app with React Hooks</Title>
-      <Caption>20 sections - 3 hours of videos</Caption>
-      <Description>
-        Learn how we build the new DesignCode site with React Hooks
-      </Description>
-      <AuthorWrapper>
-        <AuthorImage src="/images/avatars/Meng.png" alt="author" />
-        <Caption>Taught by Meng To</Caption>
-      </AuthorWrapper>
-      <PurchaseButton />
-      <SmallText>
-        Purchase include access to 30 courses. Over 80 hours of content,
-        including 12 hours for SwiftUI, iOS 13 and iOS 14
-      </SmallText>
-    </TextWrapper>
+    <HeroWrapper>
+      <CourseCard />
+      <TextWrapper>
+        <Logo src="/images/logos/react-logo.svg" alt="icon" />
+        <Title>Build a web app with React Hooks</Title>
+        <Caption>20 sections - 3 hours of videos</Caption>
+        <Description>
+          Learn how we build the new DesignCode site with React Hooks
+        </Description>
+        <AuthorWrapper>
+          <AuthorImage src="/images/avatars/Meng.png" alt="author" />
+          <Caption>Taught by Meng To</Caption>
+        </AuthorWrapper>
+        <PurchaseButton />
+        <SmallText>
+          Purchase include access to 30 courses. Over 80 hours of content,
+          including 12 hours for SwiftUI, iOS 13 and iOS 14
+        </SmallText>
+      </TextWrapper>
+    </HeroWrapper>
   </Wrapper>
 )
 
@@ -34,12 +39,21 @@ const TextWrapper = styled.div`
   position: relative;
   display: grid;
   gap: 20px;
-  padding-top: 220px;
 `
 const AuthorWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+`
+
+const HeroWrapper = styled.div`
+  display: grid;
+  max-width: 1234px;
+  grid-template-columns: 360px auto;
+  gap: 60px;
+  padding: 220px 20px 0px;
+  justify-content: center;
+  margin: 0 auto;
 `
 
 const Logo = styled.img`
