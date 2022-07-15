@@ -1,9 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
+import Circles from "../animations/Circles"
+
 function CourseCard() {
   return (
     <Wrapper className="courseCard">
+      <AnimationWrapper>
+        <Circles />
+      </AnimationWrapper>
       <Illustration
         src="/images/illustrations/illustration-1.png/"
         alt="illustration"
@@ -26,6 +31,14 @@ const Wrapper = styled.div`
   border-radius: 20px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25),
     inset 0px 0px 0px 0.5px rgba(225, 225, 225, 0.25);
+`
+
+const AnimationWrapper = styled.div`
+  position: absolute;
+  width: 360px;
+  overflow: hidden;
+  padding-top: 30px;
+  mix-blend-mode: overlay;
 `
 
 const Illustration = styled.img`
