@@ -8,7 +8,8 @@ function CourseCard() {
 export default CourseCard
 
 const Wrapper = styled.div`
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 480px;
   background: linear-gradient(200.42deg, #ff8570 13.57%, #f9504a 98.35%);
 `
