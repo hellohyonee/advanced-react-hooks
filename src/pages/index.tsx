@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import PurchaseButton from "../components/buttons/PurchaseButton"
 
 const IndexPage = () => (
   <Wrapper>
@@ -14,6 +15,11 @@ const IndexPage = () => (
         <AuthorImage src="/images/avatars/Meng.png" alt="author" />
         <Caption>Taught by Meng To</Caption>
       </AuthorWrapper>
+      <PurchaseButton />
+      <SmallText>
+        Purchase include access to 30 courses. Over 80 hours of content,
+        including 12 hours for SwiftUI, iOS 13 and iOS 14
+      </SmallText>
     </TextWrapper>
   </Wrapper>
 )
@@ -70,4 +76,11 @@ const Description = styled.p`
 const AuthorImage = styled.img`
   width: 32px;
   height: 32px;
+`
+const SmallText = styled.p`
+  max-width: 280px;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.7);
 `
