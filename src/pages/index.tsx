@@ -39,6 +39,11 @@ const TextWrapper = styled.div`
   position: relative;
   display: grid;
   gap: 20px;
+
+  @media (max-width: 780px) {
+    justify-items: center;
+    text-align: center;
+  }
 `
 const AuthorWrapper = styled.div`
   display: flex;
@@ -54,6 +59,11 @@ const HeroWrapper = styled.div`
   padding: 220px 20px 0px;
   justify-content: center;
   margin: 0 auto;
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 `
 
 const Logo = styled.img`
