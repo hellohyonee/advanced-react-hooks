@@ -1,11 +1,31 @@
-import React from "react"
+import React, { useRef } from "react"
 import styled, { keyframes } from "styled-components"
 
+import useMousePosition from "../../hooks/useMousePosition"
+
 function FlutterBuild() {
+  const ref = useRef(null)
+  const [centerX, centerY, bind] = useMousePosition(ref)
+
   return (
-    <Wrapper>
-      <div>
-        <div className="shapes">
+    <Wrapper ref={ref} {...bind}>
+      <div
+        style={{
+          transform: `
+            rotateX(${centerX / 20}deg)
+            rotateY(${centerY / 20}deg)
+          `,
+        }}
+      >
+        <div
+          className="shapes"
+          style={{
+            transform: `
+              translateX(${centerX / 2.5}px)
+              translateY(${centerY / 2.5}px)
+            `,
+          }}
+        >
           <div className="shape" />
           <div className="genericpanel shape2" />
           <div className="genericpanel shape3" />
@@ -14,34 +34,121 @@ function FlutterBuild() {
           <div className="genericpanel shape6" />
         </div>
 
-        <img className="man" src="/images/components/flutter/man.svg" />
+        <img
+          className="man"
+          src="/images/components/flutter/man.svg"
+          style={{
+            transform: `
+              translateX(${centerX / 2}px)
+              translateY(${centerY / 2}px)
+            `,
+          }}
+        />
         <img
           className="phone-left"
           src="/images/components/flutter/iphone.png"
+          style={{
+            transform: `
+              translateX(${centerX / 2.5}px)
+              translateY(${centerY / 2.5}px)
+            `,
+          }}
         />
         <img
           className="phone-right"
           src="/images/components/flutter/pixel4.png"
+          style={{
+            transform: `
+              translateX(${centerX / 3}px)
+              translateY(${centerY / 3}px)
+            `,
+          }}
         />
-        <div className="circle1" />
-        <div className="circle2" />
-        <div className="circle3" />
+        <div
+          className="circle1"
+          style={{
+            transform: `
+              translateX(${centerX / 2}px)
+              translateY(${centerY / 2}px)
+            `,
+          }}
+        />
+        <div
+          className="circle2"
+          style={{
+            transform: `
+              translateX(${centerX / 3}px)
+              translateY(${centerY / 3}px)
+            `,
+          }}
+        />
+        <div
+          className="circle3"
+          style={{
+            transform: `
+              translateX(${centerX / 5}px)
+              translateY(${centerY / 5}px)
+            `,
+          }}
+        />
 
-        <div className="circle4" />
-        <div className="circle5" />
-        <div className="circle6" />
+        <div
+          className="circle4"
+          style={{
+            transform: `
+              translateX(${centerX / 6}px)
+              translateY(${centerY / 6}px)
+            `,
+          }}
+        />
+        <div
+          className="circle5"
+          style={{
+            transform: `
+              translateX(${centerX / 3}px)
+              translateY(${centerY / 3}px)
+            `,
+          }}
+        />
+        <div
+          className="circle6"
+          style={{
+            transform: `
+              translateX(${centerX / 8}px)
+              translateY(${centerY / 8}px)
+            `,
+          }}
+        />
 
         <img
           className="background3"
           src="/images/components/flutter/background3.svg"
+          style={{
+            transform: `
+              translateX(${centerX / 5}px)
+              translateY(${centerY / 5}px)
+            `,
+          }}
         />
         <img
           className="background2"
           src="/images/components/flutter/background2.svg"
+          style={{
+            transform: `
+              translateX(${centerX / 6}px)
+              translateY(${centerY / 6}px)
+            `,
+          }}
         />
         <img
           className="background1"
           src="/images/components/flutter/background1.svg"
+          style={{
+            transform: `
+              translateX(${centerX / 7}px)
+              translateY(${centerY / 7}px)
+            `,
+          }}
         />
       </div>
     </Wrapper>
